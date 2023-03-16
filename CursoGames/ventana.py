@@ -23,6 +23,7 @@ class ventana(Frame):
         pass
 
     def create_widgets(self):
+
         frame1 = Frame(self, bg="#bfdaff")
         frame1.place(x=0, y=0, width=93, height=259)
         
@@ -62,3 +63,20 @@ class ventana(Frame):
         self.btnCancelar=Button(frame2,text="Cancelar", command=self.fCancelar, bg="red", fg="black")
         self.btnCancelar.place(x=80, y=210, width=60, height=30)
 
+        self.grid = ttk.Treeview(self, columns=("col1", "col2", "col3", "col4"))
+
+        self.grid.column("#0", width=50)
+        self.grid.column("col1", width=60, anchor=CENTER)
+        self.grid.column("col2", width=90, anchor=CENTER)
+        self.grid.column("col3", width=90, anchor=CENTER)
+        self.grid.column("col4", width=90, anchor=CENTER)
+
+        self.grid.heading("#0", text="ID", anchor=CENTER)
+        self.grid.heading("col1", text="ISO3", anchor=CENTER)
+        self.grid.heading("col2", text="Country Name", anchor=CENTER)
+        self.grid.heading("col3", text="Capital", anchor=CENTER)
+        self.grid.heading("col4", text="Currency Code", anchor=CENTER)
+        
+        self.grid.place(x=247, y=0, width=420, height=259)
+
+        #self.grid.insert("",END ,text="1", values=("ARG","Argentina","Tucuman","ARS")) #añade un dato manualmente
